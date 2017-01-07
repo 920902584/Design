@@ -1,18 +1,18 @@
-package com.fjsf.zx;
+ï»¿package com.fjsf.zx;
 
 public class ByteOperator {
 	public int byte2int(byte[] res) {   
-		// Ò»¸öbyteÊı¾İ×óÒÆ24Î»±ä³É0x??000000£¬ÔÙÓÒÒÆ8Î»±ä³É0x00??0000   
-		int targets = (res[0] & 0xff) | ((res[1] << 8) & 0xff00) // | ±íÊ¾°²Î»»ò   
+		// ä¸€ä¸ªbyteæ•°æ®å·¦ç§»24ä½å˜æˆ0x??000000ï¼Œå†å³ç§»8ä½å˜æˆ0x00??0000   
+		int targets = (res[0] & 0xff) | ((res[1] << 8) & 0xff00) // | è¡¨ç¤ºå®‰ä½æˆ–   
 		| ((res[2] << 24) >>> 8) | (res[3] << 24);   
 		return targets;   
 		}   
 	public static byte[] int2byte(int res) {  
 		byte[] targets = new byte[4];  	  
-		targets[0] = (byte) (res & 0xff);// ×îµÍÎ»   
-		targets[1] = (byte) ((res >> 8) & 0xff);// ´ÎµÍÎ»   
-		targets[2] = (byte) ((res >> 16) & 0xff);// ´Î¸ßÎ»   
-		targets[3] = (byte) (res >>> 24);// ×î¸ßÎ»,ÎŞ·ûºÅÓÒÒÆ¡£   
+		targets[0] = (byte) (res & 0xff);// æœ€ä½ä½   
+		targets[1] = (byte) ((res >> 8) & 0xff);// æ¬¡ä½ä½   
+		targets[2] = (byte) ((res >> 16) & 0xff);// æ¬¡é«˜ä½   
+		targets[3] = (byte) (res >>> 24);// æœ€é«˜ä½,æ— ç¬¦å·å³ç§»ã€‚   
 		return targets;   
 		}
 

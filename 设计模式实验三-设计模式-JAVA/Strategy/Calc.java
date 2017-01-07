@@ -1,19 +1,19 @@
-package Strategy;
+ï»¿package Strategy;
 
 public class Calc {
-	private Strategy strategy;  //ÉùÃ÷¾ßÌåµÄ²ßÂÔ¶ÔÏó
+	private Strategy strategy;  //å£°æ˜å…·ä½“çš„ç­–ç•¥å¯¹è±¡
 	
 	public Calc(Strategy strategy){
-		this.strategy = strategy;  //´«Èë¾ßÌåµÄ²ßÂÔ¶ÔÏó
+		this.strategy = strategy;  //ä¼ å…¥å…·ä½“çš„ç­–ç•¥å¯¹è±¡
 	}
 	
 	public double quoteCashPrice(double thingCashPrice){
 		return this.strategy.calcCashPrice(thingCashPrice);
-	}  //·µ»Ø´¦ÀíºÃµÄÉÌÆ·¼Û¸ñ£¨´òÕÛºó»òÕßÂú¼õºó£©
+	}  //è¿”å›å¤„ç†å¥½çš„å•†å“ä»·æ ¼ï¼ˆæ‰“æŠ˜åæˆ–è€…æ»¡å‡åï¼‰
 	 public double quotePrice(double thingPrice){
 	     return this.strategy.calcPrice(thingPrice);
-	 }  //·µ»ØÔ­À´µÄÉÌÆ·¼Û¸ñ 
+	 }  //è¿”å›åŸæ¥çš„å•†å“ä»·æ ¼ 
 	 public double quoteLeader(double thingLeader){
 	     return this.strategy.calcLeader(thingLeader);
-	 }  //·µ»ØÉÌÆ·»ı·Ö
+	 }  //è¿”å›å•†å“ç§¯åˆ†
 }

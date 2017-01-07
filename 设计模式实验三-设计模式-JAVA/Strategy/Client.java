@@ -1,4 +1,4 @@
-package Strategy;
+ï»¿package Strategy;
 
 
 public class Client {
@@ -8,67 +8,67 @@ public class Client {
 	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		Menu menu =new Menu(); //ÊµÀı»¯Menu
+		Menu menu =new Menu(); //å®ä¾‹åŒ–Menu
 		
 		  OK: while(true){
 			 switch (menu.Activity()) {
 			 case 1: 
 				 /*
-				  * ²ßÂÔ1£º¸¾Å®½ÚÅ®ĞÔÉÌÆ·´ò8ÕÛ
+				  * ç­–ç•¥1ï¼šå¦‡å¥³èŠ‚å¥³æ€§å•†å“æ‰“8æŠ˜
 				  */
 				    menu.CountWomen();
 				    menu.Count();
-					Strategy strategy1 = new ConcreteStrategyA(0.8); //ÉèÖÃ´ò¼¸ÕÛ
-					//´´½¨»·¾³
+					Strategy strategy1 = new ConcreteStrategyA(0.8); //è®¾ç½®æ‰“å‡ æŠ˜
+					//åˆ›å»ºç¯å¢ƒ
 					Calc calc1 = new Calc(strategy1); 
-					//¼ÆËã¼Û¸ñ
-					double price1 = calc1.quoteCashPrice(menu.countWomen);  //½«Å®ĞÔÎïÆ·µÄ¼Û¸ñ´«µİ½øÀ´¡£
-					double price = calc1.quotePrice(menu.count);   //ÉèÖÃ·ÇÅ®ĞÔÉÌÆ·µÄ¼Û¸ñ´«µİ½øÀ´¡£
-					double leader1 = calc1.quoteLeader((price1+price)*0.1);//´«µİ»ı·Ö
-					System.out.println("ÊäÈë¹ºÂòÅ®ĞÔÓÃÆ·×ÜÊı");
-					if( menu.VIP() == 0){ //ÅĞ¶ÏÊÇ·ñÎªVIP£¬ÈôÊÇÊä³ö»ı·Ö£¬²»ÊÇ²»Êä³ö»ı·Ö
-						System.out.println("Ïû·ÑÅ®ĞÔÓÃÆ·£º" + price1+"  Ïû·Ñ·ÇÅ®ĞÔÓÃÆ·£º"+price+"  ×Ü¼Û£º"+(price1+price));
+					//è®¡ç®—ä»·æ ¼
+					double price1 = calc1.quoteCashPrice(menu.countWomen);  //å°†å¥³æ€§ç‰©å“çš„ä»·æ ¼ä¼ é€’è¿›æ¥ã€‚
+					double price = calc1.quotePrice(menu.count);   //è®¾ç½®éå¥³æ€§å•†å“çš„ä»·æ ¼ä¼ é€’è¿›æ¥ã€‚
+					double leader1 = calc1.quoteLeader((price1+price)*0.1);//ä¼ é€’ç§¯åˆ†
+					System.out.println("è¾“å…¥è´­ä¹°å¥³æ€§ç”¨å“æ€»æ•°");
+					if( menu.VIP() == 0){ //åˆ¤æ–­æ˜¯å¦ä¸ºVIPï¼Œè‹¥æ˜¯è¾“å‡ºç§¯åˆ†ï¼Œä¸æ˜¯ä¸è¾“å‡ºç§¯åˆ†
+						System.out.println("æ¶ˆè´¹å¥³æ€§ç”¨å“ï¼š" + price1+"  æ¶ˆè´¹éå¥³æ€§ç”¨å“ï¼š"+price+"  æ€»ä»·ï¼š"+(price1+price));
 						
 					}else {
-						System.out.println("¸¾Å®½ÚÅ®ĞÔÓÃÆ·8ÕÛ£¬ÆäÓàÉÌÆ·Ô­¼Û");
-						System.out.println("Ïû·ÑÅ®ĞÔÓÃÆ·£º" + price1+"  Ïû·Ñ·ÇÅ®ĞÔÓÃÆ·£º"+price+"  ×Ü¼Û£º"+(price1+price));
-						System.out.println("¸ÃÓÃ»§»ı·ÖÎª£º"+leader1);
+						System.out.println("å¦‡å¥³èŠ‚å¥³æ€§ç”¨å“8æŠ˜ï¼Œå…¶ä½™å•†å“åŸä»·");
+						System.out.println("æ¶ˆè´¹å¥³æ€§ç”¨å“ï¼š" + price1+"  æ¶ˆè´¹éå¥³æ€§ç”¨å“ï¼š"+price+"  æ€»ä»·ï¼š"+(price1+price));
+						System.out.println("è¯¥ç”¨æˆ·ç§¯åˆ†ä¸ºï¼š"+leader1);
 					}			
 				 break OK;
 			 case 2:
 				 /*
-				  *    ²ßÂÔ2£º¹úÇì½Ú»ı·ÖË«±¶
+				  *    ç­–ç•¥2ï¼šå›½åº†èŠ‚ç§¯åˆ†åŒå€
 				  */
 				 menu.Count();
-				 Strategy strategy2 = new ConcreteStrategyB(2); //ÉèÖÃ¼¸±¶»ı·Ö¡£
+				 Strategy strategy2 = new ConcreteStrategyB(2); //è®¾ç½®å‡ å€ç§¯åˆ†ã€‚
 				 Calc calc2 = new Calc(strategy2);
-				 System.out.println("¹úÇì½ÚËùÓĞÉÌÆ·Ë«±¶»ı·Ö");
-				 double price2 =calc2.quotePrice(menu.count); //½«ÉÌÆ·¼Û¸ñ´«µİ
-				 double leader2 = calc2.quoteLeader(price2*0.1);//´«µİ»ı·Ö
-				 if(menu.VIP() == 0){  //ÅĞ¶ÏÊÇ·ñÎªVIP
-					 System.out.println("¸ÃÓÃ»§Ïû·ÑÁË£º"+price2);
+				 System.out.println("å›½åº†èŠ‚æ‰€æœ‰å•†å“åŒå€ç§¯åˆ†");
+				 double price2 =calc2.quotePrice(menu.count); //å°†å•†å“ä»·æ ¼ä¼ é€’
+				 double leader2 = calc2.quoteLeader(price2*0.1);//ä¼ é€’ç§¯åˆ†
+				 if(menu.VIP() == 0){  //åˆ¤æ–­æ˜¯å¦ä¸ºVIP
+					 System.out.println("è¯¥ç”¨æˆ·æ¶ˆè´¹äº†ï¼š"+price2);
 				 }else {
-					 System.out.println("¸ÃÓÃ»§Ïû·ÑÁË£º"+price2);
-					 System.out.println("¸ÃÓÃ»§»ñµÃ»ı·Ö£º"+leader2); 
+					 System.out.println("è¯¥ç”¨æˆ·æ¶ˆè´¹äº†ï¼š"+price2);
+					 System.out.println("è¯¥ç”¨æˆ·è·å¾—ç§¯åˆ†ï¼š"+leader2); 
 				 }
 				 break OK;
 			 case 3:
 				 /*
-				  *   ²ßÂÔ3£ºµêÇìÈÕ£¬Âú100-20£¬ÒÔ´ËÀàÍÆ
+				  *   ç­–ç•¥3ï¼šåº—åº†æ—¥ï¼Œæ»¡100-20ï¼Œä»¥æ­¤ç±»æ¨
 				  */
 				 menu.Count();
 				 Strategy strategy3 = null;
-				 ConcreteStrategyC c = new ConcreteStrategyC(100, 20);  //ÉèÖÃÂú¶àÉÙ¼õ¶àÉÙ
+				 ConcreteStrategyC c = new ConcreteStrategyC(100, 20);  //è®¾ç½®æ»¡å¤šå°‘å‡å¤šå°‘
 				 strategy3 = c;
-				 System.out.println("µêÇìÈÕËùÓĞÉÌÆ·Âú100-20¡¢Âú200-40ÒÔ´ËÀàÍÆ");
+				 System.out.println("åº—åº†æ—¥æ‰€æœ‰å•†å“æ»¡100-20ã€æ»¡200-40ä»¥æ­¤ç±»æ¨");
 				 Calc calc3 = new Calc(strategy3);
-				 double price3 =calc3.quoteCashPrice(menu.count); //´«µİ¼Û¸ñ
-				 double leader3 = calc3.quoteLeader(price3*0.1); //´«µİ»ı·Ö
-				 if(menu.VIP()==0){ //ÅĞ¶ÏVIP
-					 System.out.println("¸ÃÓÃ»§Ïû·ÑÁË£º"+price3);					 
+				 double price3 =calc3.quoteCashPrice(menu.count); //ä¼ é€’ä»·æ ¼
+				 double leader3 = calc3.quoteLeader(price3*0.1); //ä¼ é€’ç§¯åˆ†
+				 if(menu.VIP()==0){ //åˆ¤æ–­VIP
+					 System.out.println("è¯¥ç”¨æˆ·æ¶ˆè´¹äº†ï¼š"+price3);					 
 				 }else {
-					 System.out.println("¸ÃÓÃ»§Ïû·ÑÁË£º"+price3);
-					 System.out.println("¸ÄÓÃ»§»ñµÃ»ı·Ö£º"+leader3);
+					 System.out.println("è¯¥ç”¨æˆ·æ¶ˆè´¹äº†ï¼š"+price3);
+					 System.out.println("æ”¹ç”¨æˆ·è·å¾—ç§¯åˆ†ï¼š"+leader3);
 				 }
 				 break OK;
 			 default:
@@ -76,7 +76,7 @@ public class Client {
 					break OK;    
 			 }
 		  }
-//		System.out.println("ÇëÑ¡Ôñ»î¶¯£º  1.¸¾Å®½Ú  2.¹úÇì½Ú   3.µêÇìÈÕ");
+//		System.out.println("è¯·é€‰æ‹©æ´»åŠ¨ï¼š  1.å¦‡å¥³èŠ‚  2.å›½åº†èŠ‚   3.åº—åº†æ—¥");
 		
 	}
 

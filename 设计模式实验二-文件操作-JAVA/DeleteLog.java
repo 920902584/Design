@@ -1,4 +1,4 @@
-package com.fjsf.zx;
+锘縫ackage com.fjsf.zx;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,9 +12,9 @@ public class DeleteLog {
 }
 	private void deleteLog() {
 		// TODO Auto-generated method stub
-		System.out.println("请输入想要删除的日志");
+		System.out.println("璇疯緭鍏ユ兂瑕佸垹闄ょ殑鏃ュ織");
 		Scanner scanner =new Scanner(System.in);
 		int a = scanner.nextInt();
 		list.remove(a-1);
-		System.out.println("成功删除");
+		System.out.println("鎴愬姛鍒犻櫎");
 	}}

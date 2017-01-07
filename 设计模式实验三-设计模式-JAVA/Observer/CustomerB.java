@@ -1,29 +1,29 @@
-package Observer;
+ï»¿package Observer;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class CustomerB implements Watcher,Watched{   //¹Ë¿ÍB¼¶³äµ±ĞÅÏ¢Ô´ÓÖÊÇAµÄ¹Ë¿Í£¨¹Û²ìÕß£©
-	private List<Watcher> listB = new ArrayList<Watcher>();    //¶¨ÒåBµÄÁ´±íÓÃÀ´´æ·ÅBµÄ¹Ë¿Í
+public class CustomerB implements Watcher,Watched{   //é¡¾å®¢Bçº§å……å½“ä¿¡æ¯æºåˆæ˜¯Açš„é¡¾å®¢ï¼ˆè§‚å¯Ÿè€…ï¼‰
+	private List<Watcher> listB = new ArrayList<Watcher>();    //å®šä¹‰Bçš„é“¾è¡¨ç”¨æ¥å­˜æ”¾Bçš„é¡¾å®¢
 	  public void update()  
 	     {  
-	          System.out.println("ÎÒÊÇ·¿Ô´B£º´ÓAÖªµÀÓĞĞÂ·¿Ô´£¬Í¨ÖªÎÒµÄ¹Ë¿Í");
+	          System.out.println("æˆ‘æ˜¯æˆ¿æºBï¼šä»AçŸ¥é“æœ‰æ–°æˆ¿æºï¼Œé€šçŸ¥æˆ‘çš„é¡¾å®¢");
 	     }
 
 	@Override
-	public void addWatcher(Watcher watcher) {    //Ìí¼Ó¹Ë¿Í
+	public void addWatcher(Watcher watcher) {    //æ·»åŠ é¡¾å®¢
 		// TODO Auto-generated method stub
 		listB.add(watcher);
 	}
 
 	@Override
-	public void removeWatcher(Watcher watcher) {  //É¾³ı¹Ë¿Í
+	public void removeWatcher(Watcher watcher) {  //åˆ é™¤é¡¾å®¢
 		// TODO Auto-generated method stub
 		listB.remove(watcher);
 	}
 
 	@Override
-	public void notifyWatchers() {   //Í¨Öª¹Ë¿Í
+	public void notifyWatchers() {   //é€šçŸ¥é¡¾å®¢
 		// TODO Auto-generated method stub
 		for (Watcher watcher : listB)  
         {  

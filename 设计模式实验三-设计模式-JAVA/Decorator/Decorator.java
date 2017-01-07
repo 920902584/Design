@@ -1,6 +1,6 @@
-package Decorator;
+ï»¿package Decorator;
 
 public abstract class Decorator{   
-	 public abstract String getName();   //¼òÒ×µÄ¼ÓÁÏ¡£
-	 public abstract double getPrice();      //¼ÓÁÏµÄ¼Û¸ñ
+	 public abstract String getName();   //ç®€æ˜“çš„åŠ æ–™ã€‚
+	 public abstract double getPrice();      //åŠ æ–™çš„ä»·æ ¼
 }
